@@ -45,7 +45,7 @@ namespace Part3
 
             foreach (var recipe in filteredRecipes)
             {
-                lstRecipes.Items.Add($"Name: {recipe.Name}\nIngredients: {recipe.Ingredients}\nSteps: {recipe.Steps}\nFood Groups: {recipe.FoodGroups}\nCalories: {recipe.Calories}\n");
+                lstRecipes.Items.Add(new ListBoxItem { Content = $"Name: {recipe.Name}\nIngredients: {recipe.Ingredients}\nSteps: {recipe.Steps}\nFood Groups: {recipe.FoodGroups}\nCalories: {recipe.Calories}\n", Tag = recipe });
             }
         }
 
@@ -54,6 +54,21 @@ namespace Part3
             var searchQuery = txtSearch.Text;
             if (searchQuery == "Search...") searchQuery = string.Empty;
             DisplayRecipes(searchQuery);
+        }
+
+        private void btnDelete_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstRecipes.SelectedItem != null)
+            {
+                var selectedItem = (ListBoxItem)lstRecipes.SelectedItem;
+                var recipeToDelete = (Storage)selectedItem.Tag;
+                _recipes.Remove(recipeToDelete);
+                DisplayRecipes();
+            }
+            else
+            {
+                MessageBox.Show("Please select a recipe to delete.", "No Selection", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
 
         private void txtSearch_GotFocus(object sender, RoutedEventArgs e)

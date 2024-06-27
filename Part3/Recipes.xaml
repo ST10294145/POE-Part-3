@@ -12,7 +12,8 @@
             <TextBox x:Name="txtSearch" Width="200" Margin="10" Text="Search..." Foreground="Gray"
                      GotFocus="txtSearch_GotFocus" LostFocus="txtSearch_LostFocus" />
             <Button Content="Search" Click="btnSearch_Click" Width="100" Margin="10" />
-            <ListBox x:Name="lstRecipes" />
+            <Button Content="Delete" Click="btnDelete_Click" Width="100" Margin="10" />
+            <ListBox x:Name="lstRecipes" SelectionMode="Single"/>
         </StackPanel>
     </Grid>
 </Window>
