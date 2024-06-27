@@ -18,6 +18,7 @@ namespace Part3
             _storage.Ingredients = txtIngredients.Text;
             _storage.Steps = txtSteps.Text;
             _storage.FoodGroups = txtFoodGroups.Text;
+            _storage.Calories = txtCalories.Text;
 
             Recipes recipesWindow = new Recipes(_storage);
             recipesWindow.Show();

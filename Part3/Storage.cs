@@ -6,5 +6,6 @@
         public string? Ingredients { get; set; }
         public string? Steps { get; set; }
         public string? FoodGroups { get; set; }
+        public string? Calories { get; set; }
     }
 }
