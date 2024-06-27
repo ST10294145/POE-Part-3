@@ -25,3 +25,4 @@ Here you can make your own recipes and save them. This can be the future of your
 
 # References
 - https://youtube.com/playlist?list=PLih2KERbY1HHOOJ2C6FOrVXIwg4AZ-hk1&si=2B3Bri94qLr3ZG0N
+- https://youtube.com/playlist?list=PLKShHgmYjjFwmuUZ46GxeSTA2zKZF-8nv&si=oSmaVU5MMILQ1bnI
