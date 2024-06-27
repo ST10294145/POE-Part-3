@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿// Recipes.xaml.cs
+
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -6,9 +8,6 @@ using System.Windows.Media;
 
 namespace Part3
 {
-    /// <summary>
-    /// Interaction logic for Recipes.xaml
-    /// </summary>
     public partial class Recipes : Window
     {
         private List<Storage> _recipes;
@@ -29,15 +28,15 @@ namespace Part3
                 if (string.IsNullOrEmpty(searchQuery))
                     return true;
 
-                var filterType = ((ComboBoxItem)cbFilterType.SelectedItem).Content.ToString();
+                var filterType = ((ComboBoxItem)cbFilterType.SelectedItem)?.Content.ToString();
                 switch (filterType)
                 {
                     case "Name":
-                        return recipe.Name?.Contains(searchQuery, System.StringComparison.OrdinalIgnoreCase) == true;
+                        return recipe.Name?.IndexOf(searchQuery, StringComparison.OrdinalIgnoreCase) >= 0;
                     case "Food Groups":
-                        return recipe.FoodGroups?.Contains(searchQuery, System.StringComparison.OrdinalIgnoreCase) == true;
+                        return recipe.FoodGroups?.IndexOf(searchQuery, StringComparison.OrdinalIgnoreCase) >= 0;
                     case "Calories":
-                        return recipe.Calories?.Contains(searchQuery, System.StringComparison.OrdinalIgnoreCase) == true;
+                        return recipe.Calories?.IndexOf(searchQuery, StringComparison.OrdinalIgnoreCase) >= 0;
                     default:
                         return false;
                 }
@@ -52,7 +51,6 @@ namespace Part3
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             var searchQuery = txtSearch.Text;
-            if (searchQuery == "Search...") searchQuery = string.Empty;
             DisplayRecipes(searchQuery);
         }
 
@@ -68,6 +66,26 @@ namespace Part3
             else
             {
                 MessageBox.Show("Please select a recipe to delete.", "No Selection", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            if (lstRecipes.SelectedItem != null)
+            {
+                var selectedItem = (ListBoxItem)lstRecipes.SelectedItem;
+                var recipeToEdit = (Storage)selectedItem.Tag;
+
+                var editWindow = new Create_Recipe(recipeToEdit);
+                if (editWindow.ShowDialog() == true)
+                {
+                    // Update the displayed recipe after editing
+                    DisplayRecipes();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a recipe to edit.", "No Selection", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
         }
 

@@ -3,36 +3,37 @@ using System.Windows;
 
 namespace Part3
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-        private List<Storage> _recipes;
+        private List<Storage> _recipes = new List<Storage>(); // Initialize empty recipe list
 
         public MainWindow()
         {
             InitializeComponent();
-            _recipes = new List<Storage>();
         }
 
         private void btnCreateRecipe_Click(object sender, RoutedEventArgs e)
         {
-            var newform = new Create_Recipe(_recipes);
-            newform.Show();
+            var newRecipe = new Storage();
+            var createRecipeWindow = new Create_Recipe(newRecipe);
+
+            if (createRecipeWindow.ShowDialog() == true)
+            {
+                _recipes.Add(newRecipe);
+                DisplayRecipes();
+            }
         }
 
         private void btnViewRecipe_Click(object sender, RoutedEventArgs e)
         {
-            if (_recipes.Count > 0)
-            {
-                var newform = new Recipes(_recipes);
-                newform.Show();
-            }
-            else
-            {
-                MessageBox.Show("No recipes to view. Please create a recipe first.");
-            }
+            var recipesWindow = new Recipes(_recipes);
+            recipesWindow.ShowDialog();
+        }
+
+        private void DisplayRecipes()
+        {
+            // Method to display recipes if needed in the main window
+            // You can implement this as per your application's requirements
         }
     }
 }

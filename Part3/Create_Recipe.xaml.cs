@@ -1,42 +1,41 @@
-﻿using System.Collections.Generic;
+﻿// Create_Recipe.xaml.cs
+
 using System.Windows;
 
 namespace Part3
 {
     public partial class Create_Recipe : Window
     {
-        private List<Storage> _recipes;
+        private Storage _storage;
+        private bool _isEditing;
 
-        public Create_Recipe(List<Storage> recipes)
+        public Create_Recipe(Storage storage)
         {
             InitializeComponent();
-            _recipes = recipes;
+            _storage = storage;
+            _isEditing = !string.IsNullOrEmpty(_storage.Name); // Check if editing existing recipe
+
+            if (_isEditing)
+            {
+                // Populate fields with existing recipe data
+                txtName.Text = _storage.Name;
+                txtIngredients.Text = _storage.Ingredients;
+                txtSteps.Text = _storage.Steps;
+                txtFoodGroups.Text = _storage.FoodGroups;
+                txtCalories.Text = _storage.Calories;
+            }
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            var newRecipe = new Storage
-            {
-                Name = txtName.Text,
-                Ingredients = txtIngredients.Text,
-                Steps = txtSteps.Text,
-                FoodGroups = txtFoodGroups.Text,
-                Calories = txtCalories.Text
-            };
+            // Update storage object with form data
+            _storage.Name = txtName.Text;
+            _storage.Ingredients = txtIngredients.Text;
+            _storage.Steps = txtSteps.Text;
+            _storage.FoodGroups = txtFoodGroups.Text;
+            _storage.Calories = txtCalories.Text;
 
-            _recipes.Add(newRecipe);
-
-            MessageBox.Show("Recipe saved successfully!");
-            ClearForm();
-        }
-
-        private void ClearForm()
-        {
-            txtName.Clear();
-            txtIngredients.Clear();
-            txtSteps.Clear();
-            txtFoodGroups.Clear();
-            txtCalories.Clear();
+            DialogResult = true; // Return true to indicate successful save
         }
     }
 }
