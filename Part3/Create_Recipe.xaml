@@ -1,25 +1,42 @@
 ﻿<Window x:Class="Part3.Create_Recipe"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Create Recipe" Height="400" Width="400">
-    <Grid>
-        <StackPanel>
-            <TextBlock Text="Name:" />
-            <TextBox x:Name="txtName" />
+        Title="Create Recipe" Height="500" Width="400">
+    <Grid Background="LightGray">
+        <StackPanel Margin="20">
+            <!-- Name -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Name:" VerticalAlignment="Center" Width="80"/>
+                <TextBox x:Name="txtName" Width="250" Margin="10,0,0,0"/>
+            </StackPanel>
 
-            <TextBlock Text="Ingredients:" />
-            <TextBox x:Name="txtIngredients" />
+            <!-- Ingredients -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Ingredients:" VerticalAlignment="Center" Width="80"/>
+                <TextBox x:Name="txtIngredients" Width="250" Height="100" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Margin="10,0,0,0"/>
+            </StackPanel>
 
-            <TextBlock Text="Steps:" />
-            <TextBox x:Name="txtSteps" />
+            <!-- Steps -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Steps:" VerticalAlignment="Center" Width="80"/>
+                <TextBox x:Name="txtSteps" Width="250" Height="100" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Margin="10,0,0,0"/>
+            </StackPanel>
 
-            <TextBlock Text="Food Groups:" />
-            <TextBox x:Name="txtFoodGroups" />
+            <!-- Food Groups -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Food Groups:" VerticalAlignment="Center" Width="80"/>
+                <TextBox x:Name="txtFoodGroups" Width="250" Margin="10,0,0,0"/>
+            </StackPanel>
 
-            <TextBlock Text="Calories:" />
-            <TextBox x:Name="txtCalories" />
+            <!-- Calories -->
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                <TextBlock Text="Calories:" VerticalAlignment="Center" Width="80"/>
+                <TextBox x:Name="txtCalories" Width="250" Margin="10,0,0,0"/>
+            </StackPanel>
 
-            <Button Content="Save Recipe" Click="btnSave_Click" />
+            <!-- Save Button -->
+            <Button Content="Save Recipe" Click="btnSave_Click" Width="100"
+                    Background="#FF4CAF50" Foreground="White" BorderBrush="#FF4CAF50" Margin="0,20,0,0" HorizontalAlignment="Center"/>
         </StackPanel>
     </Grid>
 </Window>
