@@ -1,16 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Part3
 {
@@ -19,9 +8,16 @@ namespace Part3
     /// </summary>
     public partial class Create_Recipe : Window
     {
-        public Create_Recipe()
+        private Storage _storage;
+
+        public Create_Recipe(Storage storage)
         {
             InitializeComponent();
+            _storage = storage;
+
+            // Use the storage object as needed
+            // For example, you could display the recipe details in the UI
+            // You can access the properties using _storage.Name, _storage.Ingredients, etc.
         }
 
         private void btnYes_Click(object sender, RoutedEventArgs e)
