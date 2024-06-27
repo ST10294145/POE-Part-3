@@ -22,6 +22,7 @@ namespace Part3
             txtIngredients.Text = $"Ingredients: {_storage.Ingredients}";
             txtSteps.Text = $"Steps: {_storage.Steps}";
             txtFoodGroups.Text = $"Food Groups: {_storage.FoodGroups}";
+            txtCalories.Text = $"Calories: {_storage.Calories}";
         }
     }
 }

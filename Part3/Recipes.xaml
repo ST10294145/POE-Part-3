@@ -8,6 +8,7 @@
             <TextBlock x:Name="txtIngredients" />
             <TextBlock x:Name="txtSteps" />
             <TextBlock x:Name="txtFoodGroups" />
+            <TextBlock x:Name="txtCalories"/>
         </StackPanel>
     </Grid>
 </Window>
