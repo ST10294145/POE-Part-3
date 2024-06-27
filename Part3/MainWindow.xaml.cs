@@ -14,7 +14,6 @@ namespace Part3
 
         private void btnCreateRecipe_Click(object sender, RoutedEventArgs e)
         {
-            // Creating a new Storage object to pass to the Create_Recipe form
             var storage = new Storage();
             var newform = new Create_Recipe(storage);
             newform.Show();
