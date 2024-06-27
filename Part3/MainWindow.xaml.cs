@@ -35,5 +35,11 @@ namespace Part3
             // Method to display recipes if needed in the main window
             // You can implement this as per your application's requirements
         }
+
+        private void btnExit_Click(object sender, RoutedEventArgs e)
+        {
+            // Close the application
+            Application.Current.Shutdown();
+        }
     }
 }
