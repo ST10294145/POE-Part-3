@@ -13,13 +13,13 @@
             <!-- Ingredients -->
             <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                 <TextBlock Text="Ingredients:" VerticalAlignment="Center" Width="80"/>
-                <TextBox x:Name="txtIngredients" Width="250" Height="100" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Margin="10,0,0,0"/>
+                <TextBox x:Name="txtIngredients" Width="250" Height="100" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" TextWrapping="Wrap" Margin="10,0,0,0"/>
             </StackPanel>
 
             <!-- Steps -->
             <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
                 <TextBlock Text="Steps:" VerticalAlignment="Center" Width="80"/>
-                <TextBox x:Name="txtSteps" Width="250" Height="100" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" Margin="10,0,0,0"/>
+                <TextBox x:Name="txtSteps" Width="250" Height="100" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" TextWrapping="Wrap" Margin="10,0,0,0"/>
             </StackPanel>
 
             <!-- Food Groups -->
