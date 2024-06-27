@@ -42,6 +42,12 @@ namespace Part3
             DisplayRecipes(searchQuery);
         }
 
+        private void btnSearchFilter_Click(object sender, RoutedEventArgs e)
+        {
+            // Logic for search filter functionality
+            MessageBox.Show("Search filter button clicked");
+        }
+
         private void txtSearch_GotFocus(object sender, RoutedEventArgs e)
         {
             if (txtSearch.Text == "Search by name or food groups...")
