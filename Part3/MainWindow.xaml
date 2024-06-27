@@ -6,10 +6,13 @@
         xmlns:local="clr-namespace:Part3"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBlock Name="tbWelcome" Text="Welcome!" FontSize="65" HorizontalAlignment="Center" VerticalAlignment="Top" />
-        <Button Name="btnCreateRecipe" Content="Create a Recipe" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,108,0,0" Click="btnCreateRecipe_Click"/>
-        <Button Name="btnViewRecipe" Content="View Recipes" Width="200" Height="50" Click="btnViewRecipe_Click" />
-        <Button Name="btnExit" Content="Exit" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,275,0,0" />
+    <Grid Background="#FFF0F0F0">
+        <StackPanel VerticalAlignment="Center">
+            <TextBlock Name="tbWelcome" Text="Welcome!" FontSize="65" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,50"/>
+
+            <Button Name="btnCreateRecipe" Content="Create a Recipe" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20" Background="#FF2196F3" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnCreateRecipe_Click"/>
+            <Button Name="btnViewRecipe" Content="View Recipes" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,20" Background="#FF4CAF50" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnViewRecipe_Click"/>
+            <Button Name="btnExit" Content="Exit" Width="200" Height="50" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#FFFF5252" Foreground="White" FontSize="16" FontWeight="Bold" Click="btnExit_Click"/>
+        </StackPanel>
     </Grid>
 </Window>
