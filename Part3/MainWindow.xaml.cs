@@ -1,13 +1,4 @@
-﻿using System.Text;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace Part3
 {
@@ -23,12 +14,15 @@ namespace Part3
 
         private void btnCreateRecipe_Click(object sender, RoutedEventArgs e)
         {
-
+            // Creating a new Storage object to pass to the Create_Recipe form
+            var storage = new Storage();
+            var newform = new Create_Recipe(storage);
+            newform.Show();
         }
 
         private void btnViewRecipe_Click(object sender, RoutedEventArgs e)
         {
-
+            // Implementation for viewing the recipe
         }
     }
 }
