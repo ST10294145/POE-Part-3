@@ -5,7 +5,7 @@ Here you can make your own recipes and save them. This can be the future of your
 
 # How to use
 
-- To get started with My Console Library, follow these simple steps:
+- To get follow these simple steps:
 
 - Clone the Repository: Clone this repository to your local machine using git clone.
 
