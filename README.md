@@ -21,4 +21,4 @@ Here you can make your own recipes and save them. This can be the future of your
 # Requirments
 
 - Visual Studio IDE
-- .NET4 to .NET8
+- .NET4 to .NET8 SDK
