@@ -2,6 +2,9 @@
 
 namespace Part3
 {
+    /// <summary>
+    /// Interaction logic for Recipes.xaml
+    /// </summary>
     public partial class Recipes : Window
     {
         private Storage _storage;
