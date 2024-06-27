@@ -1,5 +1,4 @@
-﻿// Storage.cs
-
+﻿
 namespace Part3
 {
     public class Storage
