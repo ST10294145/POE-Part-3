@@ -4,10 +4,14 @@
         Title="Recipes" Height="400" Width="400">
     <Grid>
         <StackPanel>
-            <TextBox x:Name="txtSearch" Width="200" Margin="10" Text="Search by name or food groups..." Foreground="Gray"
+            <ComboBox x:Name="cbFilterType" Width="200" Margin="10" SelectedIndex="0">
+                <ComboBoxItem Content="Name" />
+                <ComboBoxItem Content="Food Groups" />
+                <ComboBoxItem Content="Calories" />
+            </ComboBox>
+            <TextBox x:Name="txtSearch" Width="200" Margin="10" Text="Search..." Foreground="Gray"
                      GotFocus="txtSearch_GotFocus" LostFocus="txtSearch_LostFocus" />
             <Button Content="Search" Click="btnSearch_Click" Width="100" Margin="10" />
-            <Button Content="Search Filter" Click="btnSearchFilter_Click" Width="100" Margin="10" />
             <ListBox x:Name="lstRecipes" />
         </StackPanel>
     </Grid>
