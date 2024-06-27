@@ -22,3 +22,6 @@ Here you can make your own recipes and save them. This can be the future of your
 
 - Visual Studio IDE
 - .NET4 to .NET8 SDK
+
+# References
+- https://youtube.com/playlist?list=PLih2KERbY1HHOOJ2C6FOrVXIwg4AZ-hk1&si=2B3Bri94qLr3ZG0N
