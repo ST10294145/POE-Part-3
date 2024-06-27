@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 
 namespace Part3
 {
@@ -7,22 +8,21 @@ namespace Part3
     /// </summary>
     public partial class Recipes : Window
     {
-        private Storage _storage;
+        private List<Storage> _recipes;
 
-        public Recipes(Storage storage)
+        public Recipes(List<Storage> recipes)
         {
             InitializeComponent();
-            _storage = storage;
-            DisplayRecipe();
+            _recipes = recipes;
+            DisplayRecipes();
         }
 
-        private void DisplayRecipe()
+        private void DisplayRecipes()
         {
-            txtName.Text = $"Name: {_storage.Name}";
-            txtIngredients.Text = $"Ingredients: {_storage.Ingredients}";
-            txtSteps.Text = $"Steps: {_storage.Steps}";
-            txtFoodGroups.Text = $"Food Groups: {_storage.FoodGroups}";
-            txtCalories.Text = $"Calories: {_storage.Calories}";
+            foreach (var recipe in _recipes)
+            {
+                lstRecipes.Items.Add($"Name: {recipe.Name}\nIngredients: {recipe.Ingredients}\nSteps: {recipe.Steps}\nFood Groups: {recipe.FoodGroups}\nCalories: {recipe.Calories}\n");
+            }
         }
     }
 }

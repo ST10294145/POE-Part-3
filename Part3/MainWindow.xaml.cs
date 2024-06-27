@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 
 namespace Part3
 {
@@ -7,30 +8,30 @@ namespace Part3
     /// </summary>
     public partial class MainWindow : Window
     {
-        private Storage _storage;
+        private List<Storage> _recipes;
 
         public MainWindow()
         {
             InitializeComponent();
+            _recipes = new List<Storage>();
         }
 
         private void btnCreateRecipe_Click(object sender, RoutedEventArgs e)
         {
-            _storage = new Storage();
-            var newform = new Create_Recipe(_storage);
+            var newform = new Create_Recipe(_recipes);
             newform.Show();
         }
 
         private void btnViewRecipe_Click(object sender, RoutedEventArgs e)
         {
-            if (_storage != null)
+            if (_recipes.Count > 0)
             {
-                var newform = new Recipes(_storage);
+                var newform = new Recipes(_recipes);
                 newform.Show();
             }
             else
             {
-                MessageBox.Show("No recipe to view. Please create a recipe first.");
+                MessageBox.Show("No recipes to view. Please create a recipe first.");
             }
         }
     }

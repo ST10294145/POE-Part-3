@@ -1,28 +1,42 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Windows;
 
 namespace Part3
 {
     public partial class Create_Recipe : Window
     {
-        private Storage _storage;
+        private List<Storage> _recipes;
 
-        public Create_Recipe(Storage storage)
+        public Create_Recipe(List<Storage> recipes)
         {
             InitializeComponent();
-            _storage = storage;
+            _recipes = recipes;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            _storage.Name = txtName.Text;
-            _storage.Ingredients = txtIngredients.Text;
-            _storage.Steps = txtSteps.Text;
-            _storage.FoodGroups = txtFoodGroups.Text;
-            _storage.Calories = txtCalories.Text;
+            var newRecipe = new Storage
+            {
+                Name = txtName.Text,
+                Ingredients = txtIngredients.Text,
+                Steps = txtSteps.Text,
+                FoodGroups = txtFoodGroups.Text,
+                Calories = txtCalories.Text
+            };
 
-            Recipes recipesWindow = new Recipes(_storage);
-            recipesWindow.Show();
-            this.Close();
+            _recipes.Add(newRecipe);
+
+            MessageBox.Show("Recipe saved successfully!");
+            ClearForm();
+        }
+
+        private void ClearForm()
+        {
+            txtName.Clear();
+            txtIngredients.Clear();
+            txtSteps.Clear();
+            txtFoodGroups.Clear();
+            txtCalories.Clear();
         }
     }
 }

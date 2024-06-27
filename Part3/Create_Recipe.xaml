@@ -16,8 +16,9 @@
             <TextBlock Text="Food Groups:" />
             <TextBox x:Name="txtFoodGroups" />
 
-            <TextBlock Text="Calories:"/>
-            <TextBox x:Name="txtCalories"/>
+            <TextBlock Text="Calories:" />
+            <TextBox x:Name="txtCalories" />
+
             <Button Content="Save Recipe" Click="btnSave_Click" />
         </StackPanel>
     </Grid>

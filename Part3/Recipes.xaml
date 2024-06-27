@@ -3,12 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Recipes" Height="400" Width="400">
     <Grid>
-        <StackPanel>
-            <TextBlock x:Name="txtName" />
-            <TextBlock x:Name="txtIngredients" />
-            <TextBlock x:Name="txtSteps" />
-            <TextBlock x:Name="txtFoodGroups" />
-            <TextBlock x:Name="txtCalories"/>
-        </StackPanel>
+        <ListBox x:Name="lstRecipes" />
     </Grid>
 </Window>
