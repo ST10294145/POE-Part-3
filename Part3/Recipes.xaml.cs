@@ -24,7 +24,9 @@ namespace Part3
             lstRecipes.Items.Clear();
 
             var filteredRecipes = _recipes
-                .Where(recipe => string.IsNullOrEmpty(searchQuery) || recipe.Name?.Contains(searchQuery, System.StringComparison.OrdinalIgnoreCase) == true)
+                .Where(recipe => string.IsNullOrEmpty(searchQuery) ||
+                                 (recipe.Name?.Contains(searchQuery, System.StringComparison.OrdinalIgnoreCase) == true) ||
+                                 (recipe.FoodGroups?.Contains(searchQuery, System.StringComparison.OrdinalIgnoreCase) == true))
                 .ToList();
 
             foreach (var recipe in filteredRecipes)
@@ -36,13 +38,13 @@ namespace Part3
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
             var searchQuery = txtSearch.Text;
-            if (searchQuery == "Search by name...") searchQuery = string.Empty;
+            if (searchQuery == "Search by name or food groups...") searchQuery = string.Empty;
             DisplayRecipes(searchQuery);
         }
 
         private void txtSearch_GotFocus(object sender, RoutedEventArgs e)
         {
-            if (txtSearch.Text == "Search by name...")
+            if (txtSearch.Text == "Search by name or food groups...")
             {
                 txtSearch.Text = string.Empty;
                 txtSearch.Foreground = new SolidColorBrush(Colors.Black);
@@ -53,7 +55,7 @@ namespace Part3
         {
             if (string.IsNullOrWhiteSpace(txtSearch.Text))
             {
-                txtSearch.Text = "Search by name...";
+                txtSearch.Text = "Search by name or food groups...";
                 txtSearch.Foreground = new SolidColorBrush(Colors.Gray);
             }
         }

@@ -4,7 +4,7 @@
         Title="Recipes" Height="400" Width="400">
     <Grid>
         <StackPanel>
-            <TextBox x:Name="txtSearch" Width="200" Margin="10" Text="Search by name..." Foreground="Gray"
+            <TextBox x:Name="txtSearch" Width="200" Margin="10" Text="Search by name or food groups..." Foreground="Gray"
                      GotFocus="txtSearch_GotFocus" LostFocus="txtSearch_LostFocus" />
             <Button Content="Search" Click="btnSearch_Click" Width="100" Margin="10" />
             <ListBox x:Name="lstRecipes" />
